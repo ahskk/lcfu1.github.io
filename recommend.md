@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 推荐
-permalink: /about/
+permalink: /recommend/
 ---
 
 ### 关于我
