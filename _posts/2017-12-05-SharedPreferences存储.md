@@ -1,8 +1,9 @@
 ---
 layout: post
 title: SharedPreferences存储
+author: lcfu1
+original: 原创
 ---
-
 ## 一、百科一下
 
 - SharedPreferences是Android平台上一个轻量级的存储类，用来保存应用的一些常用配置，比如Activity状态，Activity暂停时，将此activity的状态保存到SharedPereferences中;当Activity重载，系统回调方法onSaveInstanceState时，再从SharedPreferences中将值取出。
