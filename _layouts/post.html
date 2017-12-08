@@ -12,7 +12,8 @@ layout: default
       </time>
       {% if page.author %}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-        • <h5>原创</h5>
+      {% if page.original %}
+        • {{ page.author }}
       {% endif %}</p>
   </header>
 
