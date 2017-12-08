@@ -1,3 +1,9 @@
+---
+layout: post
+title: 使用Jekyll和github搭建个人博客
+author: lcfu1
+original: 原创
+---
 ## 一、下载[Git for windows](https://git-for-windows.github.io/)和[Ruby](http://www.ruby-lang.org/zh_cn/)并安装
 
 ## 二、Jekyll环境配置
