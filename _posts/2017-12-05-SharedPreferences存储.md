@@ -1,7 +1,6 @@
 ---
 layout: post
 title: SharedPreferences存储
-author: true
 ---
 
 ## 一、百科一下
