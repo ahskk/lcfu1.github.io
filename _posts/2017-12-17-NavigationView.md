@@ -6,16 +6,23 @@ original: 原创
 ---
 
 ## 一、新建一个项目
+
 - 可以New一个Project，选择Navigation Drawer Activity Mobile。
+
 - Gradle中会自动添加以下依赖
+
 ```
 implementation 'com.android.support:design:26.1.0'
 ```
+
 - 如果不是选择Navigation Drawer Activity Mobile，且你项目中没有以上依赖，就需要自己添加上，File-->Project Structure-->app-->Dependencies-->Library Dependency。
+
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-abd11913d9a383a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 二、java文件
+
 1、MainActivity.java
+
 ```
 package com.lcfu1.myapplication;
 
@@ -122,7 +129,9 @@ public class MainActivity extends AppCompatActivity
 ```
 
 ## 三、layout文件
+
 1、activity_main.xml，其中设置了android:fitsSystemWindows="true"，view会自动添加一个值等于状态栏高度。paddingTopapp:headerLayout="@layout/nav_header_main"指定头布局，app:menu="@menu/activity_main_drawer"指定NavigationView中的菜单布局。
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -152,6 +161,7 @@ public class MainActivity extends AppCompatActivity
 ```
 
 2、app_bar_main.xml
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -189,6 +199,7 @@ public class MainActivity extends AppCompatActivity
 ```
 
 3、content_main.xml
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -213,6 +224,7 @@ public class MainActivity extends AppCompatActivity
 ```
 
 4、nav_header_main.xml头布局
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -252,7 +264,9 @@ public class MainActivity extends AppCompatActivity
 ```
 
 ## 四、menu文件
+
 1、activity_main_drawer.xml这个是NavigationView中的菜单布局
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -295,6 +309,7 @@ public class MainActivity extends AppCompatActivity
 ```
 
 2、main.xml菜单布局
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -307,10 +322,15 @@ public class MainActivity extends AppCompatActivity
 </menu>
 ```
 ## 五、截图
+
 - 我是在android5.0上测试的
+
 - 这是设置了android:fitsSystemWindows="true"的。可以观察一下手机状态栏，状态栏是透明的，而头布局在它伸展到状态栏下。
+
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-01b58af8e4380fea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 如果没有设置fitsSystemWindows，就会出现如下效果。
+
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-ee206964249f94c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
