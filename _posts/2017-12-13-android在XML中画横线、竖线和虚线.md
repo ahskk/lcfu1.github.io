@@ -6,21 +6,27 @@ original: 原创
 ---
 
 ## 一、画横线
+
 ```
 <View
      android:layout_width="match_parent"
      android:layout_height="@dimen/border_line"
      android:background="#000000" />
 ```
+
 ## 二、画竖线
+
 ```
 <View
      android:layout_width="1dp"
      android:layout_height="match_parent"
      android:background="#000000" />
 ```
+
 ## 三、画虚线
+
 - 在drawable中新建一个dash_line.xml
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="line">
@@ -36,7 +42,9 @@ original: 原创
     -->
 </shape>
 ```
+
 - 在布局文件中使用
+
 ```
     <View
         android:layout_width="match_parent"
