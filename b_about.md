@@ -14,7 +14,6 @@ permalink: /about/
 ### 联系我
 - 我的邮箱：1711648344@qq.com
 - 我的个人博客：[http://lcfu1.club](http://lcfu1.club)
-- 我的简书：[http://www.jianshu.com/u/726cf06b5ab0](http://www.jianshu.com/u/726cf06b5ab0)
 - 我的CSDN：[http://blog.csdn.net/lcfu1](http://blog.csdn.net/lcfu1)
 
 ### 本人即将毕业，有工作欢迎介绍！！
