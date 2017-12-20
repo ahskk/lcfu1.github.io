@@ -7,7 +7,8 @@ original: 原创
 ## 一、下载[Git for windows](https://git-for-windows.github.io/)和[Ruby](http://www.ruby-lang.org/zh_cn/)并安装
 
 ## 二、Jekyll环境配置
-- Jekyll的中文官网：http://jekyllcn.com
+- Jekyll的中文网：http://jekyllcn.com
+- Jekyll的官网：https://jekyllrb.com/
 - 在一个空文件夹中右键选择打开Git Bash Here，然后**依次**按以下命令执行,可能会比较慢，因为要下载安装，所以要耐心等待：
 ```
 $ gem install jekyll bundler
