@@ -1,22 +1,18 @@
 ---
 layout: post
-title: NavigationView
+title: 实现滑动菜单效果DrawerLayout+NavigationView
 author: lcfu1
 original: 原创
 ---
 
 ## 一、新建一个项目
 
-- 可以New一个Project，选择Navigation Drawer Activity Mobile。
-
+- 可以New一个Project，选择Navigation Drawer Activity Mobile。这样新建的项目就有滑动菜单了。可以看个人情况再进行修改。
 - Gradle中会自动添加以下依赖
-
 ```
 implementation 'com.android.support:design:26.1.0'
 ```
-
 - 如果不是选择Navigation Drawer Activity Mobile，且你项目中没有以上依赖，就需要自己添加上，File-->Project Structure-->app-->Dependencies-->Library Dependency。
-
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-abd11913d9a383a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 二、java文件
@@ -24,11 +20,12 @@ implementation 'com.android.support:design:26.1.0'
 1、MainActivity.java
 
 ```
-package com.lcfu1.myapplication;
+package com.example.lcf.myapplication;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -41,12 +38,11 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -59,11 +55,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        //这里加入了导航按钮图标
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        
+//        //也可以通过以下方法来设置 导航按钮图标       
+//        ActionBar actionBar=getSupportActionBar();
+//        if(actionBar!=null){
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//            //这里设置一张图片来当导航按钮图标（HomeAsUp按钮，id为android.R.id.home），需要在onOptionsItemSelected中设置点击处理。
+//            actionBar.setHomeAsUpIndicator(R.mipmap.ic_launcher);
+//        }
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -71,7 +77,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -96,9 +102,11 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+//        }else if(id ==android.R.id.home){
+//            drawer.openDrawer(GravityCompat.START);
         }
 
-        return super.onOptionsItemSelected(item);
+            return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -130,7 +138,28 @@ public class MainActivity extends AppCompatActivity
 
 ## 三、layout文件
 
-1、activity_main.xml，其中设置了android:fitsSystemWindows="true"，view会自动添加一个值等于状态栏高度。paddingTopapp:headerLayout="@layout/nav_header_main"指定头布局，app:menu="@menu/activity_main_drawer"指定NavigationView中的菜单布局。
+1、activity_main.xml
+- NavigationView中设置了android:fitsSystemWindows="true"，view会自动添加一个值等于状态栏高度(注意：它的所有父类都要设置这个属性才行，不然没用，另外，还要指定状态栏为透明的，如<item name="android:statusBarColor">@android:color/transparent</item>)，不过android:statusBarColor属性从API21才有的，创建一个values-v21目录，添加一个styles.xml。如下：
+```
+<resources>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>
+```
+上面的是values-v21目录中的styles.xml，而values目录中的如下：
+```
+<style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+```
+需要注意的是AndroidManifest.xml中MainActivity主题设置为android:theme="@style/AppTheme.NoActionBar"。
+
+- app:headerLayout="@layout/nav_header_main"指定头布局
+- app:menu="@menu/activity_main_drawer"指定NavigationView中的菜单布局。DrawerLayout 中允许放入两个直接子控件。
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -223,7 +252,7 @@ public class MainActivity extends AppCompatActivity
 </android.support.constraint.ConstraintLayout>
 ```
 
-4、nav_header_main.xml头布局
+4、nav_header_main.xml头布局，ImageView中app:srcCompat="@mipmap/ic_launcher_round"是个圆形的图片，如果你的图片不是圆形的，可以添加以下依赖`implementation 'de.hdodenhof:circleimageview:2.1.0'`，CircleImageView是个可以使图片圆形化的控件。使用方法如下面注释部分。
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -240,6 +269,12 @@ public class MainActivity extends AppCompatActivity
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:paddingTop="@dimen/nav_header_vertical_spacing"-->
+        <!--android:src="@drawable/a" />-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -265,7 +300,7 @@ public class MainActivity extends AppCompatActivity
 
 ## 四、menu文件
 
-1、activity_main_drawer.xml这个是NavigationView中的菜单布局
+1、activity_main_drawer.xml这个是NavigationView中的菜单布局，android:checkableBehavior="single"表示只能单选。
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -321,17 +356,17 @@ public class MainActivity extends AppCompatActivity
         app:showAsAction="never" />
 </menu>
 ```
+
 ## 五、截图
 
 - 我是在android5.0上测试的
-
 - 这是设置了android:fitsSystemWindows="true"的。可以观察一下手机状态栏，状态栏是透明的，而头布局在它伸展到状态栏下。
-
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-01b58af8e4380fea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 - 如果没有设置fitsSystemWindows，就会出现如下效果。
-
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-ee206964249f94c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
 
 
 
