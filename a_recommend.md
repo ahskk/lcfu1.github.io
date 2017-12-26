@@ -3,6 +3,7 @@ layout: page
 title: 推荐
 permalink: /recommend/
 ---
+### 以下都是我个人平时关注的，以后会慢慢增加
 
 ### 书籍
 - 《Android开发进阶从小工到专家》--何红辉
@@ -35,3 +36,22 @@ permalink: /recommend/
 [https://www.zhihu.com/](https://www.zhihu.com/)
 - stackoverflow:
 [https://stackoverflow.com/](https://stackoverflow.com/)
+
+### 资源
+- [https://github.com/open-android/Android](https://github.com/open-android/Android)
+- [https://www.jianshu.com/p/9618c038135f](https://www.jianshu.com/p/9618c038135f)
+
+### 博客
+- 郭霖：[http://blog.csdn.net/guolin_blog](http://blog.csdn.net/guolin_blog)
+- 鸿洋：[http://blog.csdn.net/lmj623565791](http://blog.csdn.net/lmj623565791)
+- stormzhang：[http://stormzhang.com/posts/](http://stormzhang.com/posts/)
+- 任玉刚：[http://blog.csdn.net/singwhatiwanna](http://blog.csdn.net/singwhatiwanna)
+
+### 公众号
+- 郭霖
+- 鸿洋
+- DeveloperPython
+- 物联网智库
+- 全球人工智能
+- stormzhang
+- CSDN
