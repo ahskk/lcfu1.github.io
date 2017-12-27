@@ -42,10 +42,14 @@ permalink: /recommend/
 - [https://www.jianshu.com/p/9618c038135f](https://www.jianshu.com/p/9618c038135f)
 
 ### 4、博客
-- 郭霖：[http://blog.csdn.net/guolin_blog](http://blog.csdn.net/guolin_blog)
-- 鸿洋：[http://blog.csdn.net/lmj623565791](http://blog.csdn.net/lmj623565791)
-- stormzhang：[http://stormzhang.com/posts/](http://stormzhang.com/posts/)
-- 任玉刚：[http://blog.csdn.net/singwhatiwanna](http://blog.csdn.net/singwhatiwanna)
+- 郭霖：
+[http://blog.csdn.net/guolin_blog](http://blog.csdn.net/guolin_blog)
+- 鸿洋：
+[http://blog.csdn.net/lmj623565791](http://blog.csdn.net/lmj623565791)
+- stormzhang：
+[http://stormzhang.com/posts/](http://stormzhang.com/posts/)
+- 任玉刚：
+[http://blog.csdn.net/singwhatiwanna](http://blog.csdn.net/singwhatiwanna)
 
 ### 5、公众号
 - 郭霖
