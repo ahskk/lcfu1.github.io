@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-f926d09e07dc52ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 上面是四个top-level destinations的，来看看3个的
+
 ![image.png](http://upload-images.jianshu.io/upload_images/6025530-cd953b9326932733.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 对比一下，如果只有三个动作，则始终显示图标和文本标签
