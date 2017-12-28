@@ -8,10 +8,12 @@ original: 原创
 ## 一、Bottom Navigation
 
 - 这里我就不介绍[Material Design](https://material.io/guidelines/material-design/introduction.html)了,想了解更多就去看看官网，来看看他们自己的Introduction：(温馨提示：由于本人英语水平有限，以下引用均用有道翻译来翻译)
+
 >We challenged ourselves to create a visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design. This spec is a living document that will be updated as we continue to develop the tenets and specifics of material design.
 我们挑战自己，为我们的用户创造一种视觉语言，它综合了优秀设计的经典原则和技术和科学的可能性。这是材料设计。这个规范是一个活的文件，将会更新，因为我们继续发展的原则和材料设计的细节。
 
 - [Bottom Navigation](https://material.io/guidelines/components/bottom-navigation.html#)，想要使用Bottom Navigation，个人建议先看一下Bottom Navigation的设计，再来学习怎么用它。
+
 >Bottom navigation bars make it easy to explore and switch between top-level views in a single tap.
 底部导航条使得在单个点击中探索和切换顶级视图变得很容易。
 
